@@ -1,37 +1,30 @@
 {
   "name": "jbot",
-  "version": "0.1.0",
-  "main": "dist/index.js",
-  "module": "dist/jbot.esm.js",
-  "typings": "dist/index.d.ts",
+  "version": "0.0.0",
   "files": [
     "dist"
   ],
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint"
+    "start": "ts-node-dev --respawn --transpileOnly ./src/index.ts"
   },
   "peerDependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
   "prettier": {
-    "printWidth": 80,
+    "printWidth": 100,
     "semi": true,
     "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "all"
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
-    "husky": "^3.0.4",
+    "@types/node": "^12.7.2",
     "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1",
-    "tsdx": "^0.8.0",
+    "ts-node-dev": "^1.0.0-pre.42",
     "tslib": "^1.10.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "@slack/rtm-api": "^5.0.2",
+    "@slack/web-api": "^5.1.0",
+    "xstate": "^4.6.7"
   }
 }

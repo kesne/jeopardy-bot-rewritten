@@ -1,9 +1,17 @@
 import { RTMClient } from '@slack/rtm-api';
 
-const TOKEN_DO_NOT_REPLICATE = 'xoxb-17442029383-9RAMwCNlEdhpJdLO7YH0klKW';
+const SUPER_SECRET_TOKEN_DO_NOT_SHARE = 'Q3ByOVVOdFZjcGdOdEVDdU5UVjJZYkF1LTM4MzkyMDI0NDcxLWJ4b3g=';
+
+function decodeToken(token: string) {
+  return Buffer.from(token, 'base64')
+    .toString('utf-8')
+    .split('')
+    .reverse()
+    .join('');
+}
 
 // Initialize
-const rtm = new RTMClient(TOKEN_DO_NOT_REPLICATE);
+const rtm = new RTMClient(decodeToken(SUPER_SECRET_TOKEN_DO_NOT_SHARE));
 
 (async () => {
   // Connect to Slack

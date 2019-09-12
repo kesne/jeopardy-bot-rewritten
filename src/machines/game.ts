@@ -103,10 +103,4 @@ const gameMachine = Machine(
   },
 );
 
-export default Machine({
-  id:'mini-game',
-  initial: 'all',
-  states: {
-    all: {}
-  }
-});
+export default gameMachine;
